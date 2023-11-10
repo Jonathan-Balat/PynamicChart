@@ -7,7 +7,6 @@ def run_program():
     app_session = QApplication()  # Need to pass app_session to Main_window so it won't disappear
 
     mw = MainWindow(app_session)
-    mw.setup_ui()
     mw.setSandbox(SandBox(mw))
     mw.sandbox.add_rect(1,2,3,4)
 

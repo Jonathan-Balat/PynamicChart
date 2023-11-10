@@ -11,6 +11,7 @@ class SandBox(QGraphicsScene):
     #     print(event.buttonDownScenePos(QtCore.Qt.MouseButton.LeftButton))  # Widget-screen position
     #     print(event.buttonDownScreenPos(QtCore.Qt.MouseButton.LeftButton))  # Absolute screen position
         self.add_view()
+
     def add_view(self):
         self.view = QGraphicsView(self)
         self.view.show()

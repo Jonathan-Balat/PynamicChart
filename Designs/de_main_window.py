@@ -21,8 +21,9 @@ class MainWindow(QMainWindow):
         self.move(x / 2, y / 2)
 
         # STEP 2: Create panel on left, and right size GraphicsView
+        self.__setup_ui()
 
-    def setup_ui(self):
+    def __setup_ui(self):
         self.wd_central = QWidget(self)
         self.wd_central.setFixedSize(self.width(), self.height())
         self.wd_central.setStyleSheet("QWidget {background-color: rgba(100,100,100,255);}")
