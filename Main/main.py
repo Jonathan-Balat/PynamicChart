@@ -1,7 +1,7 @@
-from PySide2.QtWidgets import QApplication, QWidget, QGraphicsScene, QGraphicsView, QGraphicsRectItem, QGraphicsItem
-from PySide2 import QtCore
+from PySide2.QtWidgets import QApplication
 from Designs.de_sandbox import SandBox
 from Designs.de_main_window import MainWindow
+
 
 def run_program():
     app_session = QApplication()  # Need to pass app_session to Main_window so it won't disappear
