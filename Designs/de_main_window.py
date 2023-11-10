@@ -1,5 +1,4 @@
-from PySide2.QtWidgets import QMainWindow, QWidget, QLayout, QToolBar
-from PySide2.QtCore import Qt
+from PySide2.QtWidgets import QMainWindow, QWidget, QStackedLayout
 
 
 class MainWindow(QMainWindow):
@@ -34,10 +33,12 @@ class MainWindow(QMainWindow):
         self.wd_panel.setStyleSheet("QWidget {background-color: rgba(255,100,100,255);}")
 
         # REPLACE WITH SANDBOX CLASS
-        # self.wd_sandbox = QWidget(self.wd_central)
-        # self.wd_sandbox.setFixedSize(self.wd_central.width() - self.wd_panel.width(), self.wd_central.height())
-        # self.wd_sandbox.setStyleSheet("QWidget {background-color: rgba(100,100,255,255);}")
-        # self.wd_sandbox.move(self.wd_panel.width(), 0)
+        self.wd_sandbox = QWidget(self.wd_central)
+        self.wd_sandbox.setFixedSize(self.wd_central.width() - self.wd_panel.width(), self.wd_central.height())
+        self.wd_sandbox.setStyleSheet("QWidget {background-color: rgba(100,100,255,255);}")
+        self.wd_sandbox.move(self.wd_panel.width(), 0)
+
+        self.ly_sandbox = QStackedLayout(self.wd_sandbox)
 
         # REF: https://doc.qt.io/qtforpython-5/PySide2/QtWidgets/QToolBar.html#qtoolbar
         # self.t_bar = QToolBar()
@@ -47,6 +48,7 @@ class MainWindow(QMainWindow):
 
     def setSandbox(self, widget):
         self.sandbox = widget
+        self.ly_sandbox.addWidget(self.sandbox.view)
 
     def setPanel(self, widget):
         self.panel = widget
@@ -58,5 +60,6 @@ if __name__ == '__main__':
     app_session = QApplication()
 
     mw = MainWindow(app_session)
+    mw.show()
 
     app_session.exec_()
