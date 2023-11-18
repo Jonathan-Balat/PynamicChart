@@ -8,7 +8,7 @@ def run_program():
 
     mw = MainWindow(app_session)
     mw.setSandbox(SandBox(mw))
-    mw.sandbox.add_rect(1,2,3,4)
+    mw.sandbox.add_rect(0,0,200,200)
 
     mw.show()
 

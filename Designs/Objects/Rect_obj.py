@@ -1,10 +1,10 @@
-from PySide2.QtWidgets import QGraphicsItem, QGraphicsRectItem
-from PySide2.QtCore import QRectF
+from PySide2.QtWidgets import QGraphicsItem, QGraphicsTextItem
+from PySide2.QtCore import QRectF, Qt
 
 
 class RectObj(QGraphicsItem):
 
-    def __init__(self, parent):
+    def __init__(self):
         super().__init__()
 
     def boundingRect(self):
@@ -20,3 +20,11 @@ class RectObj(QGraphicsItem):
         if width != newWidth:
             self.prepareGeometryChange()
             width = newWidth
+
+    def mouseDoubleClickEvent(self, event):
+        if event.button() == Qt.LeftButton:
+            print("left mouse")
+            # TODO: Add text filling here
+
+        if event.button() == Qt.RightButton:
+            print("right mouse")

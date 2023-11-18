@@ -1,5 +1,6 @@
 from PySide2.QtWidgets import QGraphicsScene, QGraphicsView, QGraphicsItem
-from Designs.Objects.Rect_obj import RectObj
+# from Designs.Objects.Rect_obj import RectObj
+from Designs.Objects.RectObj2 import RectObj
 
 
 class SandBox(QGraphicsScene):
@@ -17,6 +18,6 @@ class SandBox(QGraphicsScene):
         self.view.show()
 
     def add_rect(self, x, y, w, h):
-        self.addItem(RectObj(self))
-        rect = self.items()[0]
-        rect.setFlag(QGraphicsItem.GraphicsItemFlag.ItemIsMovable)
+        self.addItem(RectObj(self, x, y, w, h))
+        # rect = self.items()[0]
+        # rect.setFlag(QGraphicsItem.GraphicsItemFlag.ItemIsMovable)
