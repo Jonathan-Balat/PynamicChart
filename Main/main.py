@@ -3,7 +3,7 @@ from Designs.de_sandbox import SandBox
 from Designs.de_main_window import MainWindow
 
 
-__VERSION = "0.0.1"
+__VERSION = "0.0.0"
 
 
 def run_program():
