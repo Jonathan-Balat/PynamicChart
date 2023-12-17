@@ -3,6 +3,9 @@ from Designs.de_sandbox import SandBox
 from Designs.de_main_window import MainWindow
 
 
+__VERSION = "0.0.1"
+
+
 def run_program():
     app_session = QApplication()  # Need to pass app_session to Main_window so it won't disappear
 
